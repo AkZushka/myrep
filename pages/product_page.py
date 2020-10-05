@@ -14,7 +14,7 @@ class ProductPage(BasePage):
     def go_to_basket_page(self):
         button = self.browser.find_element(*ProductPageLocators.BASKET_BUTTON)
         button.click()
-        self.solve_quiz_and_get_code()
+        #self.solve_quiz_and_get_code()
         self.should_be_in_basket_page()
         
 
