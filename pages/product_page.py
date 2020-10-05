@@ -3,10 +3,15 @@ from selenium.webdriver.common.by import By
 from .locators import ProductPageLocators
 
 
+
 class ProductPage(BasePage): 
     def should_be_in_product_page(self):
         self.should_be_basket_button()
         self.go_to_basket_page()
+
+    def should_be_in_product_page_user(self):
+        self.should_be_basket_button()
+        self.user_go_to_basket_page()
 
     def should_be_basket_button(self):
         assert self.is_element_present(*ProductPageLocators.BASKET_BUTTON), "Basket button is not presented"
@@ -14,7 +19,12 @@ class ProductPage(BasePage):
     def go_to_basket_page(self):
         button = self.browser.find_element(*ProductPageLocators.BASKET_BUTTON)
         button.click()
-        #self.solve_quiz_and_get_code()
+        self.solve_quiz_and_get_code()
+        self.should_be_in_basket_page()
+
+    def user_go_to_basket_page(self):
+        button = self.browser.find_element(*ProductPageLocators.BASKET_BUTTON)
+        button.click()
         self.should_be_in_basket_page()
         
 
