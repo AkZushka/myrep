@@ -16,6 +16,10 @@ class BasePage():
     def open(self):
         self.browser.get(self.url)
 
+    def go_to_basket_page_in_top(self):
+        but = self.browser.find_element(*BasePageLocators.TOP_TO_BASKET)
+        but.click()
+
     def is_element_present(self, how, what):
         try:
             self.browser.find_element(how, what)
