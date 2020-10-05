@@ -16,4 +16,5 @@ class ProductPageLocators():
     BASKET_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     BASKET_PRICE1 = (By.CSS_SELECTOR, ".basket-mini")
     BASKET_PRICE2 = (By.CSS_SELECTOR, ".alert-info strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert-info")
     
